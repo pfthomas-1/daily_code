@@ -1,0 +1,11 @@
+integer number
+number = RandomNumber(1, 100)
+
+if number % 15 == 0
+   Put "fizzbuzz" to output
+elseif number % 3 == 0
+   Put "fizz" to output
+elseif number % 5 == 0
+   Put "buzz" to output
+else
+   Put number to output
