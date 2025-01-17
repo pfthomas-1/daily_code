@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Is It Prime?</title>
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <p>Philip Thomas | CSC 120 2801</p>
+
+            <hr>
+
+            <form id="form">
+                <label for="number">Enter a Number to check if its prime</label>
+
+                <br>
+
+                <input type="number" name="number" id="number" minimum="1" required>
+
+                <input type="submit" id="submit" name="submit" title="submit">
+            </form>
+        </div>
+
+        <script>
+            let form = document.getElementById("form");
+            let number;
+
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Stop form from submitting
+
+                number = parseInt(document.getElementById("number").value);
+                let factors = []; // Holds factors, used to check if a number is prime
+
+                for (let num=1; num<=number; num++) {
+                    if (number % num == 0) {
+                        factors.push(num);
+                    }
+                }
+
+                console.log(factors);
+
+                if (factors.length == 2) { // Prime numbers have exactly 2 factors
+                    alert(number + " is Prime");
+                } else {
+                    alert(number + " is not Prime");
+                }
+            });
+        </script>
+    </body>
+</html>
