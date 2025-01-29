@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    <div id="main" style="text-align: center;">
+        <h2>Palindrome</h2>
+
+        <hr>
+
+        <p>Enter a string to see if it is a Palindrome</p>
+        <form id="form">
+            <input type="text" id="text" required>
+            <input type="submit">
+        </form>
+    </div>
+
+    <script>
+        let form = document.getElementById("form");
+        
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let text = document.getElementById("text").value;
+
+            console.log(`message: ${text}`);
+
+            let textArray = text.split(""); // convert input to an array
+            let reverseArray = text.split("");
+            
+            reverseArray.reverse(); // reverse reverseArray
+
+            console.log(`textArray: ${textArray}\nreverseArray: ${reverseArray}`);
+
+            let tLen = textArray.length;
+            let rLen = reverseArray.length;
+
+            let isSame = true;
+
+            for (let char = 0; char < tLen; char++) {
+                if (textArray[char] != reverseArray[char]) {
+                    isSame = false;
+                    break;
+                }
+            }
+
+            if (isSame == true) {
+                window.alert(`${text} is a palindrome`);
+            } else {
+                window.alert(`${text} is not a palindrome`);
+            }
+        });
+    </script>
+</body>
+</html>
