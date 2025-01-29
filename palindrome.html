@@ -22,25 +22,25 @@
         let form = document.getElementById("form");
         
         form.addEventListener("submit", function(event) {
-            event.preventDefault();
+            event.preventDefault(); // prevent form from clearing
 
             let text = document.getElementById("text").value;
 
-            text = text.toLowerCase();
+            textLower = text.toLowerCase(); // convert text to lowercase for uniformity (Tacocat == tacocaT)
 
             console.log(`message: ${text}`);
 
-            let textArray = text.split(""); // convert input to an array
-            let reverseArray = text.split("");
+            let textArray = textLower.split(""); // convert input to an array
+            let reverseArray = textLower.split("");
             
             reverseArray.reverse(); // reverse reverseArray
 
             console.log(`textArray: ${textArray}\nreverseArray: ${reverseArray}`);
 
-            let tLen = textArray.length;
-            let rLen = reverseArray.length;
+            let tLen = textArray.length; // stands for textLength
+            let rLen = reverseArray.length; // stands for reverseLength
 
-            let isSame = true;
+            let isSame = true; // used to store if string is palindrome, changes to false if a difference is found in the two arrays
 
             for (let char = 0; char < tLen; char++) {
                 if (textArray[char] != reverseArray[char]) {
