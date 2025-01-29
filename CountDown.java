@@ -1,7 +1,8 @@
 import java.util.Scanner; // import Scanner class
 
 public class CountDown {
-    public static void main(String[] args) {
+    
+    static void countDownFromInt() {
         while (true) { // loops until a valid input is entered and the for loop runs
             try { // ensures an integer is entered
                 Scanner myScanner = new Scanner(System.in); // create scanner object
@@ -21,5 +22,8 @@ public class CountDown {
                 System.out.println("That is not an integer, try again");
             }
         }
+    }
+    public static void main(String[] args) {
+        countDownFromInt();
     }
 }
