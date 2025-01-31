@@ -15,7 +15,7 @@ public class Factorial {
 
         if (num >= 0) {
             for (long i = num; i > 0; i--) {
-                if ((factorial * i) <= factorial) {
+                if ((factorial * i) < factorial) {
                     isValid = false;
                     break;
                 } else {
