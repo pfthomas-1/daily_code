@@ -111,6 +111,8 @@ public class AllInOne {
         int num3 = scannerObject.nextInt();
         
         processNumbers(num1, num2, num3);
+
+        scannerObject.close();
     }
 
     
